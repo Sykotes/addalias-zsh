@@ -9,5 +9,4 @@ example:
 addalias test "cd test"
 
 this adds to your .zshrc in your home dir the line:
-
 alias test="cd test"
