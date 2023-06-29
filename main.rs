@@ -56,7 +56,7 @@ fn main() -> io::Result<()> {
             println!("Alias added");
         }
     } else {
-        println!("You stupid or something?");
+        println!("\n\nExample:addalias test \"cd test\"\nthis adds to your .zshrc in your home dir the line: alias test=\"cd test\"");
     }
     Ok(())
 }
