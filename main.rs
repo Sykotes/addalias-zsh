@@ -1,6 +1,6 @@
-use std::fs::{File, OpenOptions};
-use std::io::{self, Write, BufRead, BufReader};
 use std::env;
+use std::fs::{File, OpenOptions};
+use std::io::{self, BufRead, BufReader, Write};
 
 fn get_prefix_before_quote(string: &str) -> &str {
     let mut iter = string.split('"');
@@ -27,7 +27,7 @@ fn line_exists_in_file(_alias_line: &str, _alias_name: &str) -> io::Result<bool>
     Ok(false)
 }
 
-fn add_alias(_alias_line: &str) -> io::Result<()> {  
+fn add_alias(_alias_line: &str) -> io::Result<()> {
     let home_dir = env::var("HOME").expect("Failed to retrieve home directory.");
     let mut file = OpenOptions::new()
         .append(true)
@@ -55,7 +55,6 @@ fn main() -> io::Result<()> {
             add_alias(&alias_line)?;
             println!("Alias added");
         }
-
     } else {
         println!("You stupid or something?");
     }
