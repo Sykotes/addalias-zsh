@@ -43,7 +43,7 @@ fn main() -> io::Result<()> {
     let args: Vec<String> = env::args().collect();
     let alias_name: &String = &args[1];
 
-    if alias_name.to_lowercase() != "help" {
+    if alias_name.to_lowercase() != "--help" {
         let alias_command: &String = &args[2];
         println!(
             "Alias name: {}\nAlias command: {}",
